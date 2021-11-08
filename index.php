@@ -1,3 +1,4 @@
+<?php require('function.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,19 +19,48 @@
         </div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <form action="" method="post" id="contact-form" role="form">
-                    <label for="prenom">Prenom</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Evr">
-                    <label for="nom">Nom</label>
-                    <input type="text" class="form-control" name="nom" placeholder="Sibo">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="exemple@example.com">
-                    <label for="tel">Tel</label>
-                    <input type="tel" class="form-control" name="tel" id="" placeholder="+32..">
-                    <label for="message">Message</label>
-                    <textarea name="message" class="form-control" id="" cols="30" rows="10"></textarea>
-                    <p class="p">* Ces informations sont requises</p>
-                    <input type="button" class="btn btn-warning btn-block" name="submit" value="Envoyer">
+                <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" id="contact-form" role="form">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="prenom">Prenom<span class="p">*</span></label>
+                            <input type="text" id="prenom" class="form-control" name="prenom" placeholder="Evr" value="<?= $prenom ;?>" >
+                            <p class="comments"><?php echo $prenomError ; ?></p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="nom">Nom<span class="p">*</span></label>
+                            <input type="text" id="nom" class="form-control" name="nom" placeholder="Sibo" value="<?= $nom ;?>" >
+                            <p class="comments"><?php echo $nomError ; ?></p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email">Email<span class="p">*</span></label>
+                            <input type="email" id="email" class="form-control" name="email" placeholder="exemple@example.com" value="<?= $email ;?>" > 
+                            <p class="comments"><?php echo $emailError ; ?></p>                        
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="tel">Tel<span class="p">*</span></label>
+                            <input type="tel" id="tel" class="form-control" name="tel" id="" placeholder="+32.." value="<?= $tel ;?>" >
+                            <p class="comments"><?php echo $telError ; ?></p>
+                        </div>
+
+                        <div class="col-md-12">
+
+                            <label for="message">Message<span class="p">*</span></label>
+                            <textarea name="message" id="message" class="form-control" style="height: 150px"><?= $message ;?></textarea>
+                            <p class="comments"><?php echo $messageError ; ?></p>
+                            <p class="p">* Ces informations sont requises</p>
+                        </div>
+
+                        <div class="col-md-12">
+                        <input type="submit" class="button1" name="submit" value="Envoyer">
+                        </div>
+
+                    </div>
+
+                    <p class="merci" style="display:<?php if($isSucces) echo 'block'; else echo'none';?>">Votre Message a été bien envoyé. Merci</p>
                     
 
                 </form>

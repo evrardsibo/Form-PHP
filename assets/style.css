@@ -26,4 +26,40 @@ body{
 }
 .p{
     color:#0069D6;
+    font-weight: bold;
 }  
+.form-control{
+    height: 50px;
+    font-size: 18px;
+}
+.comments{
+    font-size:18px;
+    height: 25px;
+    color: red;
+}
+#contact-form input[type=submit]{
+    display: block;
+    margin: 40px auto 0px;
+}
+.button1{
+    border: 1px solid #ddd;
+    background:#ffa500;
+    text-transform: uppercase;
+    padding:18px ;
+    width: 100%;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in 0s;
+}
+.button1:hover{
+    background: #333;
+    border-color: #ffa500;
+}
+.merci{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 15px;
+    color: green;
+}
