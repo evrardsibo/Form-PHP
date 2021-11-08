@@ -13,7 +13,7 @@ Realization of a solo project
 
 ## See the project
 
-You can view the web page via this url [Form_php](https://evrardsibo.github.io/Form-PHP/)
+You can view the web page via this url [Form_php](https://forme-php.herokuapp.com/)
 
 ## Library / Toolkit
 * Html
